@@ -1,0 +1,16 @@
+@import 'scss/mixins';
+
+.header {
+  @include phone {
+    padding: 0 2rem;
+  }
+
+  @include tablet {
+    padding: 0 1rem;
+  }
+
+  @include desktop {
+    width: 1200px;
+    padding: 0 2rem;
+  }
+}

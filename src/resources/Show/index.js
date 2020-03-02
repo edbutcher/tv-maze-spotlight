@@ -9,7 +9,7 @@ function Show({ show, loading, error, fetchShow }) {
   }, [fetchShow]);
 
   return (
-    <>
+    <section>
       <div>Show title</div>
       <div>Show Description</div>
       <div>Show cover image</div>
@@ -17,7 +17,7 @@ function Show({ show, loading, error, fetchShow }) {
         Episode list. Every episode in the list should link to a details page
         for that specific episode
       </div>
-    </>
+    </section>
   );
 }
 

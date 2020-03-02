@@ -3,13 +3,11 @@ import React from 'react';
 // import { connect } from 'react-redux';
 // import { fetchShowAsync } from './actions';
 
-function Episode({ show, loading, error, fetchShow }) {
+function Episodes({ episodes, loading, error, fetchShow }) {
   return (
-    <section>
-      <div>Episode title</div>
-      <div>Episode Summary</div>
-      <div>Episode cover image</div>
-    </section>
+    <>
+      <section>episodes</section>
+    </>
   );
 }
 
@@ -24,4 +22,4 @@ function Episode({ show, loading, error, fetchShow }) {
 // });
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Episode);
-export default Episode;
+export default Episodes;
