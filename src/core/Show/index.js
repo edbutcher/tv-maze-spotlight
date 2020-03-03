@@ -20,7 +20,7 @@ function Show({ show, loading, error, fetchShow }) {
       {show !== null && (
         <Wrapper>
           <Title title={show.name} />
-          <Image url={show.image.medium} alt={show.name} />
+          <Image url={show.image.original} alt={show.name} />
           <Description isHtml text={show.summary} />
         </Wrapper>
       )}
@@ -29,7 +29,7 @@ function Show({ show, loading, error, fetchShow }) {
 }
 
 const mapStateToProps = state => ({
-  show: state.show.show,
+  show: state.show.data,
   loading: state.show.loading,
   error: state.show.error
 });
