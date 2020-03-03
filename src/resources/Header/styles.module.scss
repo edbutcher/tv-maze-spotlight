@@ -1,16 +1,44 @@
-@import 'scss/mixins';
+@import "scss/mixins";
 
 .header {
-  @include phone {
-    padding: 0 2rem;
-  }
-
-  @include tablet {
-    padding: 0 1rem;
-  }
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 3px 3px;
 
   @include desktop {
     width: 1200px;
-    padding: 0 2rem;
   }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(138, 132, 123);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+  font-size: 2rem;
+  font-family: "Patrick Hand", Helvetica, Arial, sans-serif;
+}
+
+.link:hover {
+  color: rgb(63, 63, 63);
+  transition: background-color 0.4s;
 }

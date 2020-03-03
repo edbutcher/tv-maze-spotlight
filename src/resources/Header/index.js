@@ -5,12 +5,12 @@ import styles from './styles.module.scss';
 function Header() {
   return (
     <header className={styles.header}>
-      <ul>
-        <li>
-          <Link to='/show'>Show</Link>
+      <ul className={styles.nav}>
+        <li className={styles.navItem}>
+          <Link className={styles.link} to='/show'>Show</Link>
         </li>
-        <li>
-          <Link to='/episodes'>Episodes</Link>
+        <li className={styles.navItem}>
+          <Link className={styles.link} to='/episodes'>Episodes</Link>
         </li>
       </ul>
     </header>

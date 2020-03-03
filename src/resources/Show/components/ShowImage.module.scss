@@ -1,0 +1,12 @@
+@import 'scss/mixins';
+
+.image {
+  width: 100%;
+  padding: 0;
+  object-fit: cover;  
+
+  @include desktop {
+    width: 50%;
+    padding: 0 1rem 0 0;
+  }
+}

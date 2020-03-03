@@ -3,21 +3,28 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchShowAsync } from './actions';
 
+import Title from './components/ShowTitle';
+import Description from './components/ShowDescription';
+import Wrapper from './components/ShowWrapper';
+import Image from './components/ShowImage';
+
 function Show({ show, loading, error, fetchShow }) {
   useEffect(() => {
     fetchShow();
   }, [fetchShow]);
 
   return (
-    <section>
-      <div>Show title</div>
-      <div>Show Description</div>
-      <div>Show cover image</div>
-      <div>
-        Episode list. Every episode in the list should link to a details page
-        for that specific episode
-      </div>
-    </section>
+    <>
+      {loading && <p>Loading...</p>}
+      {error && <p>Error!</p>}
+      {show !== null && (
+        <Wrapper>
+          <Title title={show.name} />
+          <Image url={show.image.medium} alt={show.name} />
+          <Description isHtml text={show.summary} />
+        </Wrapper>
+      )}
+    </>
   );
 }
 
