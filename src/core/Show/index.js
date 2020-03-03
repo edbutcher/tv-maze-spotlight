@@ -1,17 +1,23 @@
 import React, { useEffect } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchShowAsync } from './actions';
+import * as showSelectors from './selectors';
 
 import Title from './components/ShowTitle';
 import Description from './components/ShowDescription';
 import Wrapper from './components/ShowWrapper';
 import Image from './components/ShowImage';
 
-function Show({ show, loading, error, fetchShow }) {
+function Show() {
+  const show = useSelector(showSelectors.getShowData);
+  const loading = useSelector(showSelectors.getShowLoading);
+  const error = useSelector(showSelectors.getShowError);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchShow();
-  }, [fetchShow]);
+    dispatch(fetchShowAsync());
+  }, [dispatch]);
 
   return (
     <>
@@ -28,14 +34,4 @@ function Show({ show, loading, error, fetchShow }) {
   );
 }
 
-const mapStateToProps = state => ({
-  show: state.show.data,
-  loading: state.show.loading,
-  error: state.show.error
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchShow: bindActionCreators(fetchShowAsync, dispatch)
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Show);
+export default Show;
