@@ -27,7 +27,7 @@ function Show() {
         <Wrapper>
           <Title title={show.name} />
           <Image url={show.image.original} alt={show.name} />
-          <Description isHtml text={show.summary} />
+          <Description data-testid="show-description" isHtml text={show.summary} />
         </Wrapper>
       )}
     </>

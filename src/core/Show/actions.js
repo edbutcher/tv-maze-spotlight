@@ -17,3 +17,8 @@ export function fetchShowAsync() {
     }
   };
 }
+
+export default {
+  ...actions,
+  fetchShowAsync
+};

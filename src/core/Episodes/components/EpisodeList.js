@@ -7,7 +7,7 @@ function EpisodeListColumns({ columnNames }) {
   return (
     <div>
       {columnNames.map(columnName => (
-        <p>{columnName}</p>
+        <p key={columnName}>{columnName}</p>
       ))}
     </div>
   );
